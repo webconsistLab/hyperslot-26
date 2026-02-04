@@ -1,0 +1,35 @@
+fetch("https://api-ivacbd.dgi-rnd.com/iams/api/v1/auth/signin", {
+  "headers": {
+    "accept": "application/json, text/plain, */*",
+    "content-type": "application/json",
+    "sec-ch-ua": "\"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"Windows\""
+  },
+  "referrer": "https://appointment-ivacbd.dgi-rnd.com/",
+  "body": "{\"phone\":\"01764806080\",\"password\":\"Msd@458@\",\"captchaToken\":\"0cAFcWeA4KUoQTKBHucwibOeN3-3BsjluF9PN792MEJpUBvFD53TYiwy0UxYzEJeA4Fk_t5FYQTDlIHjMjaMOE7jdfxmngoBwC0Qdg_v6qDt93Oey7Retz6u1J74UsYsvD9vDXjvHuJR3pp5hDvj9EwrO_dBLOdTsyrVauOS4t7AY6UL4YJiMq-MJ7KbyA2ByIwsiK4MiITTdKBsZ04Ygipv9Ph5W-2i7VV6yD3ZL7hqdLYeIorzLf94svLcQSf-5UgciRX9Uo9Wgv8A9-FrZVa_CJ6hZx6VEpJNNfdqEP6NwJXdGfK_6CU0tdm0K1WTGQbXyiBSHKTyhUN63EOdH91gIRZrxWkU0ZXuJpH1SzXyu3XbQBh62A-vHvU-pdiDa4MPEnyMvJkVVvfBpxjA-yU4F-TyBc7kfv_o5XMuMUh6drMKUA_99Idj6iw263P4dQa9o53PybyLxcMilkVe1Ka75k7rLB5X9B3WVSKSG0FWzhRxPozqjg-UbHphHfumeDpdpOtEZEzeGppTxiEDKZhMByw0pvk9AGj79gX4u9zGp-YuOz2gg0vwp6XX9xSBAQX_xblqbhr6y-lCzpN_MJ3x6eVK7bc_eL1w5Yo_lhzPSK0qIwdZKQYqPlNWlpCSBhPuaDmO8klR_xItnkcS8vJaoYOJGKAU2jebqwRgLWM0CUkO_XHUju_1swddMYEEONrso0jaRXO8bwIbZ-KkGuL38dCxmlgv3oIZ-XQwUow8qITekcGMQ9OcyMzPIhVw1CytehjMNuDtfjLOkwGszgQOnX3EqUHqMHI-fPUUSyrSMPf0ZoEr79rRD1Pxei2gXaVKc00F9wHqDlU2VaYws_NzzIrdVlYmi1nMWO04XGPnNoc8xqP7GPFOw9JuAEzcr8GGGONDa2g5wiSu4XbctdSD_ah2HDvpBXpMlz50StmhJA19huZCUXad5nGBZzPBellsK8foVWqTfS8_GTWkF-p--uE2RWUDoZ34UvRoskJ-D8RA9s-jl3Pn_2C-oLENwj9_rR5f4JKAc9a3NWs5xIStCP91haWihKHxR2puf13Fl_5T0cCTJa6uC_fPGPn_XO6_sUyWgUXk4RGri13ncGhGuw2CTv3xwcxIgsIcpFG-IijU3mYWo4k5V8GwpsVXj7HDZnmdNcuh0g29dtv9LPD6RWvxEGZEU-GzM7uMt9iL4AT-KT6VlFfi7V84QFsIyB6fD4GNxmRRQCcadsIIEkPmdJzky3moNyHZUlcul_Bpnqxhy0osSCL-pyKiN02mIVvrKvSWUvIZW_DJmbXSXIPX_AFH4vOOaBMYiQXodEjIRXmAYEnnaZSCMug6AVxK-b1MxhdIkTs5xTKuukfEi269TC-2XrjwKIwkc6xiA2cewlcRgD4v247SgTzdgSSSTsv93a6yjBbC95NIuZ7XvdzKjYyFMH4PW2V868qAAPOE7qy83QEKQu01bmUm3ZVV1qnHKErrhFhOXD3BnZkBsR4aF8AVG-tFI-ZYdPEM-rX_ngvUimW_X7uYRHdHxGwNHp3fNrVeb5iUEPJWlJBa7jhJL2Dvt9G5SKOYUEcdy4-9CL-OgolB7CPRIC4C2um-Mf0POPUXOLcijjb82iYzqv2UwpFyIZLrsohCVHzhaT7vm5pX1fNJOczznW911IlteNCl62M71XyATqXcUQgY-ccp-IgPIJaDOv6DMYeuzzqn8ORXlTjvRfOI_A0kkf13ciBcMz5vxYNXKm\"}",
+  "method": "POST",
+  "mode": "cors",
+  "credentials": "omit"
+});
+
+fetch("https://api-ivacbd.dgi-rnd.com/iams/api/v1/auth/signup", {
+  "headers": {
+    "accept": "application/json, text/plain, */*",
+    "accept-language": "en-US,en;q=0.9,bn;q=0.8",
+    "cache-control": "no-cache",
+    "content-type": "application/json",
+    "pragma": "no-cache",
+    "sec-ch-ua": "\"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-site"
+  },
+  "referrer": "https://appointment-ivacbd.dgi-rnd.com/",
+  "body": "{\"phone\":\"01330604122\",\"email\":\"masudrmail39@gmail.com\",\"nid\":\"1956861998\",\"passport\":\"1956861998\",\"givenName\":\"MD MASUD\",\"surName\":\"RANA\",\"dob\":\"1999-03-29T00:00:00.000Z\",\"password\":\"Msd@458@\"}",
+  "method": "POST",
+  "mode": "cors",
+  "credentials": "omit"
+});
