@@ -1,4 +1,4 @@
-fetch("https://api-ivacbd.dgi-rnd.com/iams/api/v1/auth/signin", {
+fetch("https://api.ivacbd.com/iams/api/v1/auth/signin", {
   "headers": {
     "accept": "application/json, text/plain, */*",
     "content-type": "application/json",
@@ -7,13 +7,13 @@ fetch("https://api-ivacbd.dgi-rnd.com/iams/api/v1/auth/signin", {
     "sec-ch-ua-platform": "\"Windows\""
   },
   "referrer": "https://appointment-ivacbd.dgi-rnd.com/",
-  "body": "{\"phone\":\"01764806080\",\"password\":\"Msd@458@\",\"captchaToken\":\"0cAFcWeA4KUoQTKBHucwibOeN3-3BsjluF9PN792MEJpUBvFD53TYiwy0UxYzEJeA4Fk_t5FYQTDlIHjMjaMOE7jdfxmngoBwC0Qdg_v6qDt93Oey7Retz6u1J74UsYsvD9vDXjvHuJR3pp5hDvj9EwrO_dBLOdTsyrVauOS4t7AY6UL4YJiMq-MJ7KbyA2ByIwsiK4MiITTdKBsZ04Ygipv9Ph5W-2i7VV6yD3ZL7hqdLYeIorzLf94svLcQSf-5UgciRX9Uo9Wgv8A9-FrZVa_CJ6hZx6VEpJNNfdqEP6NwJXdGfK_6CU0tdm0K1WTGQbXyiBSHKTyhUN63EOdH91gIRZrxWkU0ZXuJpH1SzXyu3XbQBh62A-vHvU-pdiDa4MPEnyMvJkVVvfBpxjA-yU4F-TyBc7kfv_o5XMuMUh6drMKUA_99Idj6iw263P4dQa9o53PybyLxcMilkVe1Ka75k7rLB5X9B3WVSKSG0FWzhRxPozqjg-UbHphHfumeDpdpOtEZEzeGppTxiEDKZhMByw0pvk9AGj79gX4u9zGp-YuOz2gg0vwp6XX9xSBAQX_xblqbhr6y-lCzpN_MJ3x6eVK7bc_eL1w5Yo_lhzPSK0qIwdZKQYqPlNWlpCSBhPuaDmO8klR_xItnkcS8vJaoYOJGKAU2jebqwRgLWM0CUkO_XHUju_1swddMYEEONrso0jaRXO8bwIbZ-KkGuL38dCxmlgv3oIZ-XQwUow8qITekcGMQ9OcyMzPIhVw1CytehjMNuDtfjLOkwGszgQOnX3EqUHqMHI-fPUUSyrSMPf0ZoEr79rRD1Pxei2gXaVKc00F9wHqDlU2VaYws_NzzIrdVlYmi1nMWO04XGPnNoc8xqP7GPFOw9JuAEzcr8GGGONDa2g5wiSu4XbctdSD_ah2HDvpBXpMlz50StmhJA19huZCUXad5nGBZzPBellsK8foVWqTfS8_GTWkF-p--uE2RWUDoZ34UvRoskJ-D8RA9s-jl3Pn_2C-oLENwj9_rR5f4JKAc9a3NWs5xIStCP91haWihKHxR2puf13Fl_5T0cCTJa6uC_fPGPn_XO6_sUyWgUXk4RGri13ncGhGuw2CTv3xwcxIgsIcpFG-IijU3mYWo4k5V8GwpsVXj7HDZnmdNcuh0g29dtv9LPD6RWvxEGZEU-GzM7uMt9iL4AT-KT6VlFfi7V84QFsIyB6fD4GNxmRRQCcadsIIEkPmdJzky3moNyHZUlcul_Bpnqxhy0osSCL-pyKiN02mIVvrKvSWUvIZW_DJmbXSXIPX_AFH4vOOaBMYiQXodEjIRXmAYEnnaZSCMug6AVxK-b1MxhdIkTs5xTKuukfEi269TC-2XrjwKIwkc6xiA2cewlcRgD4v247SgTzdgSSSTsv93a6yjBbC95NIuZ7XvdzKjYyFMH4PW2V868qAAPOE7qy83QEKQu01bmUm3ZVV1qnHKErrhFhOXD3BnZkBsR4aF8AVG-tFI-ZYdPEM-rX_ngvUimW_X7uYRHdHxGwNHp3fNrVeb5iUEPJWlJBa7jhJL2Dvt9G5SKOYUEcdy4-9CL-OgolB7CPRIC4C2um-Mf0POPUXOLcijjb82iYzqv2UwpFyIZLrsohCVHzhaT7vm5pX1fNJOczznW911IlteNCl62M71XyATqXcUQgY-ccp-IgPIJaDOv6DMYeuzzqn8ORXlTjvRfOI_A0kkf13ciBcMz5vxYNXKm\"}",
+  "body": "{\"phone\":\"01316056074\",\"password\":\"Msd@458@\",\"captchaToken\":\"0cAFcWeA6ZmUnMfKT9ZfQIejX546ulgvHlnrucKtpXd10cunoa-Wn_d5r9xEouUhQNYHutGzQYOcpAUhBw7kkjGQjYN5iGCYgKshYldXB5AcCP0QIn3DhTTKnq8swUZ7bVrraKh6WnzumY41dtNVQ0HSInM62LSRVqRoQeADD2GNWkx_ZBlAQAw_N0uFko4ehSKecJPYfYTMUn3HOVj7hml1bicbBu6ObwrJrikN4SRroNdw1bREpqQ-i4dQ3JxGS-OyvjtYNVttMV1nI-t2EphPE3caWeCjY1tv0A8VEgRGFbHvxqmrfueSi7UyLB4rpAbX-a6X7UA1goQEC_-hQWjWi1mfH6UezWI8GEwfoRLn3WoTVLIxX9aqcNhOWx1-91JbcL3OR1EssD8f6-8KprgnXO9Gram5RogPsDBSYQphWoBTnmurpzVOI4LdVzsRK0IostAOmVBEaWFySFI6c7-U7rezXSMQGfW_rap0dfpbWVBV-XPy9HmtCPz-7HzE-FmJpxMZBwesSdHIW8C8KQSgWfBx0NP45wnpjArII6cIR5HreK2b8VcEBCzbxkxIVhuk7dcNws8vlGEtSMbHY1Tcft8x7NFQXBCMCOnk9dtHmdnuW2ZADH_G_Bcv-ebObdnMz1iP9qoht8AtLwIvN6vewJy0fEh96ZRHPnrlD9iU38dx_Lt3GA0OmMTSaARX_FISpmHvWsouEVDR0d7OEUzTUS25JaK4NxTp1RAcBDWNNuU0F2mhbBebV2ZsVlJHBTINn7-cbsFuz3GvCIAFukMD-3lp6OinnrLFwez-uQEdku-sDByQgYZ7mm2XSkb4Kepm4OlTWkzh5ekxPbyO-qLgqDJeqUy_F5ytM3UFzciCMWoOWL2hQgALSs9kzvaBJWk_3pIn9ZU41H4CTr3Qd5QowGjD8Tz30lxoYgKe7pMIhLY7DP8VwIp8xFhgWqeLmNflj1e11n7tsIijsBRLXFvH5zkVSIKJKmQB_AOc5mWlQH_SHWSpQ38V7KIpv_LBHv80IMW9QJR8GDXrp9BRmYyk61u9u5OjH-6JNk7hULAgCTk01Wi474a1pq2TYk200sXRuD3GWQ-8MQCrhXX40IlRtrF57UN_-3gSAj_-Cv0-ZdmTsraUoq3AKp9v292Ik4_8SjBk1UE6no2h7x7xjKbj_3VRFnOJU2aCyKSs2zDFiYJ984WgKm7RwspcuJzljrSrElOoeUn6G43MMe8N3m2vjDAsl_JuyfhM4gDUiHVzAFq2egZe7jtRRZ-G9sojgHdt9Svl8ZrdoDQttudztouAaDlV4NPyQuYm1ZK1DqtepPBEjAxGu9WEUMuUAT0TB5jze5zC9aiLxSVB59i_6OolaXJ0GOTEmMs8x2Hc6UEXMbkXb_f2PX07J_Be9J_Bte5uEQrbwyjhkz3tpfP-r_4KfFHs90VCn0gR-ylUfzLGFwLi3mh-TEI7k-P9BrwvtTeyStn36SxMwrM87PlTIVaVib0G__xk5AGQ1PFMv6gts9zSiUjZ34CffxrK0SmXtxeN2HxmqPWXawW1-VZbgG8ZHBX5gGs2vsz80vYatENmOFW2tjRRyTllEvLm03-4PPi5ip--mWDNo9gRwHyBEkOHPJ9T3YBG28v2kStdzCfOvnKrnNHCoIHkwFif3PsK3YbHERyBF26t9ef4MqBjT_djRXf9TMnPeGBxdgt7-6_IMO7c8bUU_c5VTu5h69fht10PdWih0avoawTc6FyY3EDq32-ktnrlF_lnBi73Pscs03_7fL9n8iFMUw-rw1WpD6nbZXuwt4JEx-ExHoPDTJFODKDgfO0v5WaVuUF9HVNJsqy9mFjAw4Sp4Dc8WIWIUAL2x8oCTAECn8julip2rBqXZeeaS09c9aghX1fQ5XXecV9w96KjwvVOFXdV2PMkF9rL59kMHM1jbiklgimfIsbjsJzzW_-nxK-vk2zCmO-Qr3b7cV119WP0D5YQAbDeTSVBZzJfP8SqFUT_2_SUd3hWSx757WJ0qX2DGmP0nfN5lIj6AvBenGDBIM2GMH7djuR1nzrxKAa0RuNzO1rDF-9N5HLkKv7AHU9mJ5tkwwUEGEfp87jx2sTJQG2Ri8YSZp38SR1v_sY3Zs4c_Lqb1amhE_Mg8pJnRJGEDl1pq22-DIdqSeXqoJoIxco8uytO05nku54rMtsMfqbIXDDebruh6-Qw8Sk1hpd4apFCknf3vSpb5kRnP49njFpR5yB782kU_FLoMcNgtiNQ_KjWz9bSeH9SPYsnNOTWx5u5yPHk0slJoxBIn9vbjTohPDrSwuu06X6bIZV-tv\"}",
   "method": "POST",
   "mode": "cors",
   "credentials": "omit"
 });
 
-fetch("https://api-ivacbd.dgi-rnd.com/iams/api/v1/auth/signup", {
+fetch("https://api.ivacbd.com/iams/api/v1/auth/signup", {
   "headers": {
     "accept": "application/json, text/plain, */*",
     "accept-language": "en-US,en;q=0.9,bn;q=0.8",
@@ -27,8 +27,8 @@ fetch("https://api-ivacbd.dgi-rnd.com/iams/api/v1/auth/signup", {
     "sec-fetch-mode": "cors",
     "sec-fetch-site": "same-site"
   },
-  "referrer": "https://appointment-ivacbd.dgi-rnd.com/",
-  "body": "{\"phone\":\"01330604122\",\"email\":\"masudrmail39@gmail.com\",\"nid\":\"1956861998\",\"passport\":\"1956861998\",\"givenName\":\"MD MASUD\",\"surName\":\"RANA\",\"dob\":\"1999-03-29T00:00:00.000Z\",\"password\":\"Msd@458@\"}",
+  "referrer": "https://appointment.ivacbd.com/",
+  "body": "{\"phone\":\"01315349472\",\"email\":\"MBM3388993@GMAIL.COM\",\"nid\":\"2810848081\",\"passport\":\"A05355401\",\"givenName\":\"HIRALAL\",\"surName\":\"RAY\",\"dob\":\"1972-02-06T00:00:00.000Z\",\"password\":\"Msd@458@\"}",
   "method": "POST",
   "mode": "cors",
   "credentials": "omit"
