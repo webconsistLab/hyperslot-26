@@ -33,3 +33,368 @@ fetch("https://api.ivacbd.com/iams/api/v1/auth/signup", {
   "mode": "cors",
   "credentials": "omit"
 });
+
+
+fetch("https://api.ivacbd.com/iams/api/v1/auth/signin", {
+  "headers": {
+    "accept": "application/json, text/plain, */*",
+    "accept-language": "en-US,en;q=0.9,bn;q=0.8,de;q=0.7,es;q=0.6",
+    "cache-control": "no-cache, no-store, must-revalidate",
+    "content-type": "application/json",
+    "pragma": "no-cache",
+    "priority": "u=1, i",
+    "sec-ch-ua": "\"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-site"
+  },
+  "referrer": "https://appointment.ivacbd.com/",
+  "body": "{\"phone\":\"01724037501\",\"password\":\"Msd@458@\",\"captchaToken\":\"0cAFcWeA7-J2Poxd-sB5CWE3sfwEiFysYm0aGS_52ds7-_OD40rV2qyCqUDdtdQgI8YbpdqLnYIIQzZoIqRoWyFAUYd-mklrIqE3hzcuV-sPZrmtfO8p5xA7Qa3aIjzF22vvCjL-NUjhBmysdIF17ouB2_-QKF20BoLX_U9IB0RSaMYqygarOV4xHmdPpBJzMkEXCGumvCE54vDPuJKKhLlK116bLrqUYc9o9poxaT_VkHxjtItSxj7SnZO1qVG-7Qugho342ovipUurpHMYe9MUIaTI4c9nzzwO98pLdDp_ak-IsLHRIXhQcOTF-CNT3SZYWCgp76JNZzEoVq3qIcBMIddYyAOyCUnnJR0XzU87wa46RelGA35sWQeUuWHk1tfmTw_Kl7nQvsIvmwThvELjz18IlKKtpM7BuT0ro0ylsTcTi7jwGhFMbJ5MbDDRc5EuJcDrm8AKTTFMLJug8sjpLkYINoL-LIpdzXi_eXzV99C4utRqCUvI3qhSC5naUMyX0DaW67u6VQPzqaaKSkgmPYk8pi5_0alykSdHJ1AUuik4A11elDLl_6lZpdAHg4uNHC_auKMbawwb-N0dGx85lNqVyCpMtUUsgf6QZiniMXovdCHLay33tKW8qkiibamP1jzNliLN6Yomg92T9p_ASYbyWPIx4wgjGFWpnO0iQb2CZVM_RbI9kH0avR02QIB221CvCzL3ogUvBpEZ0Tdo2UshTGCnIcbOPVN7qlp8gJQrdmLx-kx5E-a13USNubYSC32NfiM_nBlw6QzrjBH3KzrgYdtHVG4cBnH4hDYlOqMrFf2IgeIFX06a4JJC4cnNqVMoYF4Con8fzGJF_ljMibDkc3KuienjeEk81Y2SfBzCUdIrBJjGGsAVjlYlQih4jNK8m--RrxqQVJ1DtS6vInOhr0lssmzYCvlsB24LiJtFLpL1tiPsfsmqrCzev69DDmn7wChoJzPlC4ge7zRCIjg1PZPxBBwhaZySRzevmRoPHD75CNSVawD9gRogYvgChrEcZfyan2XZDP3m1zbGzi7UgUoo4dA97Ubt0PDmysNvVQxFQC9SG1XyW41W89lofAFViuzOPEf5mMHeh9swWDogTRPYaiDgPWhbU8OVQfLOv8-OAV4yg-eqLFsNfqBeOHr4Lx3vRxxzssLjTNGe4Qb3fWslPQsifwJih-X8gPzPO6rQ2uIckXF5HXM1FkjbYyl8h0lWwuJqRGyiqbPfBixKsx6psBPVPKuruZjPOJRdeqXl3-lA3rKTLBH7sukowrvQSfX4cw_xwW-bbnKQRV4XRw7_H_MU2FAL5uZIvKQFLPXbtN_0vLncByq73q9NyYZKbyyDQZg0Xit2ySiBQBhs4Q6f7uIwgcylzvEvi1H8F1C5Ojmw4XV_xeUR61jXCm2DcEJqS0DaumDceB9W6SvJjaX9evdKneHd0J31GmpE61TEFE9xMHlFJRSnsCo1wmBFWwXP4IqcE3c7_ZGhLpXgdJRaU3inQHZLBUtNF16mT9YyQUqmtwWTy_Wv1GeqZv62UpfWpls189qk5KmrM9f226cNTHvvHg-o_AggB82HuTUoL4d_EM07bzhDBGAdiDt61gzO6dBMdhdqYwE9tG5XOOlxPkcAzR58xCFwuSXu2ElxdBHsu7jwAt-32nsW1FhQsmb68DpMFMcyCYL2AYrUHvxqcz3fgz7nP4NUMw4PUj_J4U1sKYo_iQNx3T_A9xhqjqZUYs769t4IXZ_Mu-3Nau2OEV-A_cTwN52y6woQDhQqkhde9Ddvzcs7e44JwZf6aGQ2QhiA5VqaOjN5mvXjhy2MVk__x5LwQQWcV9lLP3H3xZ5pSqKTFh6KGOyxSa2lIHw_ErSzQ56QXpH-5jVF0dsy97UDVZug09XxUc6xglCwlqXMkIclLHqYHE45VDQrbEP_jaMWABFB9bLJHxC6ru7hVDiTAe7AonXLUMQyeSOkUvFj0sz_JVrBeeDjEnahkKodf-6WPWScArx25hBQ7-mZRr6mcYwnXEBsciQDfedZovPDzLFv7Y6LqUSrwh5Ue3OGPeXfmLGLtQbkmtqyPSXUj5MmJjGH5uQAJWRFaVbmcI0e2BDf_pBUxCN9VpU1RkS3iHmCgpD1ujv5ptWDKv8VEeyE-rYOe6WsrVdQSte6ELKsycb0vHUEB1XgYCINtPKBcS\"}",
+  "method": "POST",
+  "mode": "cors",
+  "credentials": "omit"
+});
+{
+    "data": {
+        "accessToken": "eyJraWQiOiJpYW0tand0LXJzYS0xIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiI1YmIyYzRiZi02NDVlLTQ4NDItODlmNi04NzBiNjEzZWRlMjIiLCJhdWQiOiJpYW1zLWFwaSIsInJvbGVzIjpbXSwiaXNzIjoiaWFtcyIsImV4cCI6MTc3MDQ2ODYyNiwiaWF0IjoxNzcwNDY3NzI2LCJqdGkiOiI0YTgwNDE3OS02MjYwLTQzMzktYTU2NC1iMTZmMzdmMWMwMzMiLCJzaWQiOiIyNzE2OTJkZS0xYzRhLTQ4NDItOWRmOC00MjNlZDQ3NWQxNzYifQ.opKnjYJGJMfuynHXiCKjvUISsncsP2Uro3iO_p0lq810s9_DrGhPbh7UEmueZ-BNcy41U50ECC-5qeM7aHoz3eFu_gqR54OEYuWYMLG77z8B2EaAVd24Uv3_OzRHeMWlxNYNgYybuV-Nl8BVRTnec0eq1jLdJkq2xMdLW_UAVy9G2S6Q5RDerU6hf4yP9hzwlEmV4YWL9R7ENHyIfW-IYRv9eoeNxXA2FkYNmQrsB7oPBlmxz0yrY8hPxgpmP3k3cog5qoS2RFUP2ZJvCuTk91JlYGCX7hUSvqD8KN0fLyKcYm0-W3w5gkX0e7Xeqq_gwBcBC-L472rJUupT3S5A5A",
+        "tokenType": "Bearer",
+        "expiresAt": 899,
+        "userId": "5bb2c4bf-645e-4842-89f6-870b613ede22",
+        "requestId": "e785475d-ab7c-4c2c-9556-d453c1dba5a6",
+        "roles": []
+    },
+    "statusCode": 200,
+    "message": "Success",
+    "successFlag": true,
+    "serverTime": "2026-02-07T12:35:26.506924934Z"
+}
+
+fetch("https://api.ivacbd.com/iams/api/v1/otp/verifySigninOtp", {
+  "headers": {
+    "accept": "application/json, text/plain, */*",
+    "accept-language": "en-US,en;q=0.9,bn;q=0.8,de;q=0.7,es;q=0.6",
+    "authorization": "Bearer eyJraWQiOiJpYW0tand0LXJzYS0xIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiI1YmIyYzRiZi02NDVlLTQ4NDItODlmNi04NzBiNjEzZWRlMjIiLCJhdWQiOiJpYW1zLWFwaSIsInJvbGVzIjpbXSwiaXNzIjoiaWFtcyIsImV4cCI6MTc3MDQ2ODYyNiwiaWF0IjoxNzcwNDY3NzI2LCJqdGkiOiI0YTgwNDE3OS02MjYwLTQzMzktYTU2NC1iMTZmMzdmMWMwMzMiLCJzaWQiOiIyNzE2OTJkZS0xYzRhLTQ4NDItOWRmOC00MjNlZDQ3NWQxNzYifQ.opKnjYJGJMfuynHXiCKjvUISsncsP2Uro3iO_p0lq810s9_DrGhPbh7UEmueZ-BNcy41U50ECC-5qeM7aHoz3eFu_gqR54OEYuWYMLG77z8B2EaAVd24Uv3_OzRHeMWlxNYNgYybuV-Nl8BVRTnec0eq1jLdJkq2xMdLW_UAVy9G2S6Q5RDerU6hf4yP9hzwlEmV4YWL9R7ENHyIfW-IYRv9eoeNxXA2FkYNmQrsB7oPBlmxz0yrY8hPxgpmP3k3cog5qoS2RFUP2ZJvCuTk91JlYGCX7hUSvqD8KN0fLyKcYm0-W3w5gkX0e7Xeqq_gwBcBC-L472rJUupT3S5A5A",
+    "cache-control": "no-cache, no-store, must-revalidate",
+    "content-type": "application/json",
+    "pragma": "no-cache",
+    "priority": "u=1, i",
+    "sec-ch-ua": "\"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-site"
+  },
+  "referrer": "https://appointment.ivacbd.com/",
+  "body": "{\"requestId\":\"e785475d-ab7c-4c2c-9556-d453c1dba5a6\",\"phone\":\"01724037501\",\"code\":\"977507\",\"otpChannel\":\"PHONE\"}",
+  "method": "POST",
+  "mode": "cors",
+  "credentials": "include"
+});
+
+{
+    "data": {
+        "verified": true,
+        "verificationStatus": "OTP verified",
+        "expiresAt": "2026-02-07T12:40:26.421196Z"
+    },
+    "statusCode": 200,
+    "message": "Success",
+    "successFlag": true,
+    "serverTime": "2026-02-07T12:35:57.971352015Z"
+}
+
+
+
+fetch("https://api.ivacbd.com/iams/api/v1/file/file-confirmation-and-slot-status", {
+  "headers": {
+    "accept": "*/*",
+    "accept-language": "en-US,en;q=0.9,bn;q=0.8,de;q=0.7,es;q=0.6",
+    "cache-control": "no-cache",
+    "pragma": "no-cache",
+    "priority": "u=1, i",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-site"
+  },
+  "referrer": "https://appointment.ivacbd.com/",
+  "body": null,
+  "method": "OPTIONS",
+  "mode": "cors",
+  "credentials": "omit"
+});
+
+
+{
+    "data": {
+        "fileUploadConfirmed": false,
+        "paymentConfirm": false,
+        "slotOpen": false,
+        "uploadEnd": false,
+        "uploadFile": true
+    },
+    "statusCode": 200,
+    "message": "Success",
+    "successFlag": true,
+    "serverTime": "2026-02-07T12:36:04.844159226Z"
+}
+
+
+fetch("https://api.ivacbd.com/iams/api/v1/file/upload-file", {
+  "headers": {
+    "accept": "application/json, text/plain, */*",
+    "accept-language": "en-US,en;q=0.9,bn;q=0.8,de;q=0.7,es;q=0.6",
+    "authorization": "Bearer eyJraWQiOiJpYW0tand0LXJzYS0xIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiI1YmIyYzRiZi02NDVlLTQ4NDItODlmNi04NzBiNjEzZWRlMjIiLCJhdWQiOiJpYW1zLWFwaSIsInJvbGVzIjpbXSwiaXNzIjoiaWFtcyIsImV4cCI6MTc3MDQ2ODYyNiwiaWF0IjoxNzcwNDY3NzI2LCJqdGkiOiI0YTgwNDE3OS02MjYwLTQzMzktYTU2NC1iMTZmMzdmMWMwMzMiLCJzaWQiOiIyNzE2OTJkZS0xYzRhLTQ4NDItOWRmOC00MjNlZDQ3NWQxNzYifQ.opKnjYJGJMfuynHXiCKjvUISsncsP2Uro3iO_p0lq810s9_DrGhPbh7UEmueZ-BNcy41U50ECC-5qeM7aHoz3eFu_gqR54OEYuWYMLG77z8B2EaAVd24Uv3_OzRHeMWlxNYNgYybuV-Nl8BVRTnec0eq1jLdJkq2xMdLW_UAVy9G2S6Q5RDerU6hf4yP9hzwlEmV4YWL9R7ENHyIfW-IYRv9eoeNxXA2FkYNmQrsB7oPBlmxz0yrY8hPxgpmP3k3cog5qoS2RFUP2ZJvCuTk91JlYGCX7hUSvqD8KN0fLyKcYm0-W3w5gkX0e7Xeqq_gwBcBC-L472rJUupT3S5A5A",
+    "cache-control": "no-cache, no-store, must-revalidate",
+    "content-type": "multipart/form-data; boundary=----WebKitFormBoundaryFX7aFeI6H4Q20tYa",
+    "pragma": "no-cache",
+    "priority": "u=1, i",
+    "sec-ch-ua": "\"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-site"
+  },
+  "referrer": "https://appointment.ivacbd.com/",
+  "body": "------WebKitFormBoundaryFX7aFeI6H4Q20tYa\r\nContent-Disposition: form-data; name=\"file\"; filename=\"PUROBI RANI.pdf\"\r\nContent-Type: application/pdf\r\n\r\n\r\n------WebKitFormBoundaryFX7aFeI6H4Q20tYa\r\nContent-Disposition: form-data; name=\"isPrimary\"\r\n\r\ntrue\r\n------WebKitFormBoundaryFX7aFeI6H4Q20tYa--\r\n",
+  "method": "POST",
+  "mode": "cors",
+  "credentials": "include"
+});
+
+payload-
+------WebKitFormBoundaryxA7dqML1K8jbQeea
+Content-Disposition: form-data; name="file"; filename="PARIMAL CHANDRA ROY.pdf"
+Content-Type: application/pdf
+
+
+------WebKitFormBoundaryxA7dqML1K8jbQeea
+Content-Disposition: form-data; name="isPrimary"
+
+false
+------WebKitFormBoundaryxA7dqML1K8jbQeea--
+
+{
+    "data": {
+        "overview": {
+            "applicationId": "BGDRV01EA326",
+            "commissionId": "180847cf-bd6d-4a34-8347-57a344746b02",
+            "commissionName": "Rajshahi",
+            "dob": "06-OCT-1984",
+            "email": "PUROBIRANI22@GMAIL.COM",
+            "fullName": "PUROBI RANI",
+            "ivacCenter": null,
+            "nidOrBr": "9111528494",
+            "passport": "A04797334",
+            "phone": "01724037501",
+            "primary": true,
+            "visaType": "MEDICAL"
+        },
+        "error": []
+    },
+    "statusCode": 200,
+    "message": "Success",
+    "successFlag": true,
+    "serverTime": "2026-02-07T12:36:13.455301119Z"
+}
+  
+
+fetch("https://api.ivacbd.com/iams/api/v1/file/overview", {
+  "headers": {
+    "accept": "application/json, text/plain, */*",
+    "accept-language": "en-US,en;q=0.9,bn;q=0.8,de;q=0.7,es;q=0.6",
+    "authorization": "Bearer eyJraWQiOiJpYW0tand0LXJzYS0xIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiI1YmIyYzRiZi02NDVlLTQ4NDItODlmNi04NzBiNjEzZWRlMjIiLCJhdWQiOiJpYW1zLWFwaSIsInJvbGVzIjpbXSwiaXNzIjoiaWFtcyIsImV4cCI6MTc3MDQ2ODYyNiwiaWF0IjoxNzcwNDY3NzI2LCJqdGkiOiI0YTgwNDE3OS02MjYwLTQzMzktYTU2NC1iMTZmMzdmMWMwMzMiLCJzaWQiOiIyNzE2OTJkZS0xYzRhLTQ4NDItOWRmOC00MjNlZDQ3NWQxNzYifQ.opKnjYJGJMfuynHXiCKjvUISsncsP2Uro3iO_p0lq810s9_DrGhPbh7UEmueZ-BNcy41U50ECC-5qeM7aHoz3eFu_gqR54OEYuWYMLG77z8B2EaAVd24Uv3_OzRHeMWlxNYNgYybuV-Nl8BVRTnec0eq1jLdJkq2xMdLW_UAVy9G2S6Q5RDerU6hf4yP9hzwlEmV4YWL9R7ENHyIfW-IYRv9eoeNxXA2FkYNmQrsB7oPBlmxz0yrY8hPxgpmP3k3cog5qoS2RFUP2ZJvCuTk91JlYGCX7hUSvqD8KN0fLyKcYm0-W3w5gkX0e7Xeqq_gwBcBC-L472rJUupT3S5A5A",
+    "cache-control": "no-cache, no-store, must-revalidate",
+    "pragma": "no-cache",
+    "priority": "u=1, i",
+    "sec-ch-ua": "\"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-site"
+  },
+  "referrer": "https://appointment.ivacbd.com/",
+  "body": null,
+  "method": "POST",
+  "mode": "cors",
+  "credentials": "include"
+});
+
+{
+    "data": [
+        {
+            "applicationId": "BGDRV01EA326",
+            "commissionId": "180847cf-bd6d-4a34-8347-57a344746b02",
+            "commissionName": "Rajshahi",
+            "dob": "06-OCT-1984",
+            "email": "PUROBIRANI22@GMAIL.COM",
+            "fullName": "PUROBI RANI",
+            "ivacCenter": null,
+            "nidOrBr": "9111528494",
+            "passport": "A04797334",
+            "phone": "01724037501",
+            "primary": true,
+            "visaType": "MEDICAL"
+        },
+        {
+            "applicationId": "BGDRV01EA626",
+            "commissionId": "180847cf-bd6d-4a34-8347-57a344746b02",
+            "commissionName": "Rajshahi",
+            "dob": "30-APR-1981",
+            "email": "PUROBIRANI22@GMAIL.COM",
+            "fullName": "PARIMAL CHANDRA ROY",
+            "ivacCenter": null,
+            "nidOrBr": "1498287513",
+            "passport": "A04797333",
+            "phone": "01724037501",
+            "primary": false,
+            "visaType": "MEDICAL"
+        },
+        {
+            "applicationId": "BGDRV01EDE26",
+            "commissionId": "180847cf-bd6d-4a34-8347-57a344746b02",
+            "commissionName": "Rajshahi",
+            "dob": "22-DEC-2013",
+            "email": "PUROBIRANI22@GMAIL.COM",
+            "fullName": "NOBONITA ROY",
+            "ivacCenter": null,
+            "nidOrBr": "20139426609108977",
+            "passport": "A16529860",
+            "phone": "01724037501",
+            "primary": false,
+            "visaType": "ENTRY"
+        },
+        {
+            "applicationId": "BGDRV01EDD26",
+            "commissionId": "180847cf-bd6d-4a34-8347-57a344746b02",
+            "commissionName": "Rajshahi",
+            "dob": "24-DEC-2017",
+            "email": "PUROBIRANI22@GMAIL.COM",
+            "fullName": "PROTTUSH CHANDRA ROY",
+            "ivacCenter": null,
+            "nidOrBr": "20179426610174724",
+            "passport": "A16481352",
+            "phone": "01724037501",
+            "primary": false,
+            "visaType": "ENTRY"
+        }
+    ],
+    "statusCode": 200,
+    "message": "Success",
+    "successFlag": true,
+    "serverTime": "2026-02-07T12:36:43.230064757Z"
+}
+
+
+fetch("https://api.ivacbd.com/iams/api/v1/high-commissions", {
+  "headers": {
+    "accept": "application/json, text/plain, */*",
+    "accept-language": "en-US,en;q=0.9,bn;q=0.8,de;q=0.7,es;q=0.6",
+    "authorization": "Bearer eyJraWQiOiJpYW0tand0LXJzYS0xIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiI1YmIyYzRiZi02NDVlLTQ4NDItODlmNi04NzBiNjEzZWRlMjIiLCJhdWQiOiJpYW1zLWFwaSIsInJvbGVzIjpbXSwiaXNzIjoiaWFtcyIsImV4cCI6MTc3MDQ2ODYyNiwiaWF0IjoxNzcwNDY3NzI2LCJqdGkiOiI0YTgwNDE3OS02MjYwLTQzMzktYTU2NC1iMTZmMzdmMWMwMzMiLCJzaWQiOiIyNzE2OTJkZS0xYzRhLTQ4NDItOWRmOC00MjNlZDQ3NWQxNzYifQ.opKnjYJGJMfuynHXiCKjvUISsncsP2Uro3iO_p0lq810s9_DrGhPbh7UEmueZ-BNcy41U50ECC-5qeM7aHoz3eFu_gqR54OEYuWYMLG77z8B2EaAVd24Uv3_OzRHeMWlxNYNgYybuV-Nl8BVRTnec0eq1jLdJkq2xMdLW_UAVy9G2S6Q5RDerU6hf4yP9hzwlEmV4YWL9R7ENHyIfW-IYRv9eoeNxXA2FkYNmQrsB7oPBlmxz0yrY8hPxgpmP3k3cog5qoS2RFUP2ZJvCuTk91JlYGCX7hUSvqD8KN0fLyKcYm0-W3w5gkX0e7Xeqq_gwBcBC-L472rJUupT3S5A5A",
+    "cache-control": "no-cache, no-store, must-revalidate",
+    "pragma": "no-cache",
+    "priority": "u=1, i",
+    "sec-ch-ua": "\"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-site"
+  },
+  "referrer": "https://appointment.ivacbd.com/",
+  "body": null,
+  "method": "GET",
+  "mode": "cors",
+  "credentials": "include"
+});
+
+
+{
+    "data": [
+        {
+            "id": "ac2040a9-24e2-4ca1-a661-079658d80638",
+            "missionName": "Chittagong",
+            "city": "Chittagong",
+            "code": "HC_CTG_001"
+        },
+        {
+            "id": "ddfdbcb9-27dd-4abd-9e46-fcdb0d8c1895",
+            "missionName": "Dhaka",
+            "city": "Dhaka",
+            "code": "HC_DHK_001"
+        },
+        {
+            "id": "55d42891-1a7e-498c-ad98-a5be4fcfa4d5",
+            "missionName": "Khulna",
+            "city": "Khulna",
+            "code": "HC_KHL_001"
+        },
+        {
+            "id": "180847cf-bd6d-4a34-8347-57a344746b02",
+            "missionName": "Rajshahi",
+            "city": "Rajshahi",
+            "code": "HC_RAJ_001"
+        },
+        {
+            "id": "7ebb11f2-b7c3-4fb2-9f80-d704d7e6f509",
+            "missionName": "Sylhet",
+            "city": "Sylhet",
+            "code": "HC_SYL_001"
+        }
+    ],
+    "statusCode": 200,
+    "message": "Success",
+    "successFlag": true,
+    "serverTime": "2026-02-07T12:36:47.525086657Z"
+}
+
+
+fetch("https://api.ivacbd.com/iams/api/v1/ivac-centers/180847cf-bd6d-4a34-8347-57a344746b02", {
+  "headers": {
+    "accept": "application/json, text/plain, */*",
+    "accept-language": "en-US,en;q=0.9,bn;q=0.8,de;q=0.7,es;q=0.6",
+    "authorization": "Bearer eyJraWQiOiJpYW0tand0LXJzYS0xIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiI1YmIyYzRiZi02NDVlLTQ4NDItODlmNi04NzBiNjEzZWRlMjIiLCJhdWQiOiJpYW1zLWFwaSIsInJvbGVzIjpbXSwiaXNzIjoiaWFtcyIsImV4cCI6MTc3MDQ2ODYyNiwiaWF0IjoxNzcwNDY3NzI2LCJqdGkiOiI0YTgwNDE3OS02MjYwLTQzMzktYTU2NC1iMTZmMzdmMWMwMzMiLCJzaWQiOiIyNzE2OTJkZS0xYzRhLTQ4NDItOWRmOC00MjNlZDQ3NWQxNzYifQ.opKnjYJGJMfuynHXiCKjvUISsncsP2Uro3iO_p0lq810s9_DrGhPbh7UEmueZ-BNcy41U50ECC-5qeM7aHoz3eFu_gqR54OEYuWYMLG77z8B2EaAVd24Uv3_OzRHeMWlxNYNgYybuV-Nl8BVRTnec0eq1jLdJkq2xMdLW_UAVy9G2S6Q5RDerU6hf4yP9hzwlEmV4YWL9R7ENHyIfW-IYRv9eoeNxXA2FkYNmQrsB7oPBlmxz0yrY8hPxgpmP3k3cog5qoS2RFUP2ZJvCuTk91JlYGCX7hUSvqD8KN0fLyKcYm0-W3w5gkX0e7Xeqq_gwBcBC-L472rJUupT3S5A5A",
+    "cache-control": "no-cache, no-store, must-revalidate",
+    "pragma": "no-cache",
+    "priority": "u=1, i",
+    "sec-ch-ua": "\"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-site"
+  },
+  "referrer": "https://appointment.ivacbd.com/",
+  "body": null,
+  "method": "GET",
+  "mode": "cors",
+  "credentials": "include"
+});
+
+
+fetch("https://api.ivacbd.com/iams/api/v1/appointment/appointment-booking-config", {
+  "headers": {
+    "accept": "application/json, text/plain, */*",
+    "accept-language": "en-US,en;q=0.9,bn;q=0.8,de;q=0.7,es;q=0.6",
+    "authorization": "Bearer eyJraWQiOiJpYW0tand0LXJzYS0xIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiI1YmIyYzRiZi02NDVlLTQ4NDItODlmNi04NzBiNjEzZWRlMjIiLCJhdWQiOiJpYW1zLWFwaSIsInJvbGVzIjpbXSwiaXNzIjoiaWFtcyIsImV4cCI6MTc3MDQ2ODYyNiwiaWF0IjoxNzcwNDY3NzI2LCJqdGkiOiI0YTgwNDE3OS02MjYwLTQzMzktYTU2NC1iMTZmMzdmMWMwMzMiLCJzaWQiOiIyNzE2OTJkZS0xYzRhLTQ4NDItOWRmOC00MjNlZDQ3NWQxNzYifQ.opKnjYJGJMfuynHXiCKjvUISsncsP2Uro3iO_p0lq810s9_DrGhPbh7UEmueZ-BNcy41U50ECC-5qeM7aHoz3eFu_gqR54OEYuWYMLG77z8B2EaAVd24Uv3_OzRHeMWlxNYNgYybuV-Nl8BVRTnec0eq1jLdJkq2xMdLW_UAVy9G2S6Q5RDerU6hf4yP9hzwlEmV4YWL9R7ENHyIfW-IYRv9eoeNxXA2FkYNmQrsB7oPBlmxz0yrY8hPxgpmP3k3cog5qoS2RFUP2ZJvCuTk91JlYGCX7hUSvqD8KN0fLyKcYm0-W3w5gkX0e7Xeqq_gwBcBC-L472rJUupT3S5A5A",
+    "cache-control": "no-cache, no-store, must-revalidate",
+    "content-type": "application/json",
+    "pragma": "no-cache",
+    "priority": "u=1, i",
+    "sec-ch-ua": "\"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"144\", \"Google Chrome\";v=\"144\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-site"
+  },
+  "referrer": "https://appointment.ivacbd.com/",
+  "body": "{\"mission\":\"Rajshahi\",\"ivacCenter\":\"IVAC, RAJSHAHI\"}",
+  "method": "POST",
+  "mode": "cors",
+  "credentials": "include"
+});
