@@ -1,4 +1,53 @@
 (async () => {
+  console.log("🔍 Waiting for user to solve captcha...");
+
+  // Wait until grecaptcha is loaded
+  while (typeof grecaptcha === "undefined") {
+    await new Promise(r => setTimeout(r, 100));
+  }
+
+  // Wait for user to solve captcha
+  const captchaToken = await new Promise(resolve => {
+    const checkToken = () => {
+      const token = grecaptcha.getResponse();
+      if (token) {
+        resolve(token);
+      } else {
+        requestAnimationFrame(checkToken); // Poll next frame without interval
+      }
+    };
+    checkToken();
+  });
+
+  // Save token immediately
+  localStorage.setItem("captchaToken", captchaToken);
+  console.log("✅ Captcha solved! Token saved:", captchaToken);
+})();
+
+
+async function getCaptchaToken() {
+  
+  let token = localStorage.getItem("captchaToken");
+
+  if (token) {
+    console.log("✅ Using existing captcha token from localStorage");
+    // Optionally remove it if you want one-time use
+    // localStorage.removeItem("captchaToken");
+    return token;
+  }
+
+  console.log("⏳ No token found, solving captcha...");
+  token = await solveAction();
+
+  if (token) {
+    localStorage.setItem("captchaToken", token);
+    console.log("✅ New captcha token saved to localStorage");
+  }
+
+  return token;
+}
+
+(async () => {
   
   const AUTH_STORAGE = JSON.parse(localStorage.getItem('auth-storage'));
   const CLIENT_KEY = "CAP-9C3B0E752F38D866518010D71238E7E288763ED3579031F654D82FB608E7973D";
@@ -106,10 +155,10 @@
     console.log(`🔁 Attempt #${attempt}`);
 
     // 1️⃣ CAPTCHA
-    const captchaToken = await solveAction();
+    const captchaToken = await getCaptchaToken();
 
     // 2️⃣ RESERVE SLOT
-    const reserveRes = await reserveSlot(localStorage.getItem('captchaToken')||captchaToken);
+    const reserveRes = await reserveSlot(captchaToken);
 
     if (
       reserveRes?.message === "Slot reserved successfully" &&
@@ -134,7 +183,8 @@
     // Retry if slot not available
     if (reserveRes?.reservationId === null) {
       console.log("❌ Slot unavailable, retrying...");
-      await sleep(400);
+      localStorage.removeItem('captchaToken');
+      await sleep(5000);
     }
   }
 })();
