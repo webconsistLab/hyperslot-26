@@ -100,8 +100,7 @@ const verifyOtp = "https://api.ivacbd.com/iams/api/v1/otp/verifySigninOtp";
       otpChannel: "PHONE"
     }),
     method: "POST",
-    mode: "cors",
-    credentials: "include"
+    mode: "cors"
   });
 
   const verifyJson = await verifyRes.json();
