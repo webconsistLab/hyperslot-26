@@ -1,34 +1,8 @@
 (async () => {
-  console.log("🔍 Waiting for user to solve captcha...");
-
-  // Wait until grecaptcha is loaded
-  while (typeof grecaptcha === "undefined") {
-    await new Promise(r => setTimeout(r, 100));
-  }
-
-  // Wait for user to solve captcha
-  const captchaToken = await new Promise(resolve => {
-    const checkToken = () => {
-      const token = grecaptcha.getResponse();
-      if (token) {
-        resolve(token);
-      } else {
-        requestAnimationFrame(checkToken); // Poll next frame without interval
-      }
-    };
-    checkToken();
-  });
-
-  // Save token immediately
-  localStorage.setItem("captchaToken", captchaToken);
-  console.log("✅ Captcha solved! Token saved:", captchaToken);
-})();
-
-(async () => {
-  
   const AUTH_STORAGE = JSON.parse(localStorage.getItem('auth-storage'));
   const CLIENT_KEY = "CAP-9C3B0E752F38D866518010D71238E7E288763ED3579031F654D82FB608E7973D";
   const SITE_KEY = "6LdyiGMsAAAAAJefesdWMjxy8pu3A3DmbeJkkdUl";
+  const POOL_KEY = 'captcha_pool';
 
   const API = {
     CAPTCHA_CREATE: "https://api.capsolver.com/createTask",
@@ -39,151 +13,158 @@
 
   const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-  /***********************
-   * STEP 1: SOLVE CAPTCHA
-   ***********************/
-  async function solveAction() {
-    const createRes = await fetch(API.CAPTCHA_CREATE, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        clientKey: CLIENT_KEY,
-        task: {
-          type: "ReCaptchaV2TaskProxyLess",
-          websiteURL: "https://appointment.ivacbd.com",
-          websiteKey: SITE_KEY,
-          pageAction: "login"
+  // --- Pool Management ---
+  const getPool = () => {
+    try {
+      return JSON.parse(localStorage.getItem(POOL_KEY) || "[]");
+    } catch (e) { return []; }
+  };
+
+  const addToPool = (token) => {
+    const pool = getPool();
+    pool.push({ token, addedAt: Date.now() });
+    localStorage.setItem(POOL_KEY, JSON.stringify(pool));
+    console.log(`✅ Token Added. Current Pool: ${pool.length}`);
+  };
+
+  const popFromPool = () => {
+    const pool = getPool();
+    if (pool.length === 0) return null;
+    const item = pool.shift();
+    localStorage.setItem(POOL_KEY, JSON.stringify(pool));
+    return item.token;
+  };
+
+  /*********************************
+   * 1. TOKEN COLLECTOR
+   *********************************/
+  async function startCollector() {
+    // Manual listener: Checks if you solved the on-screen captcha
+    setInterval(() => {
+      if (window.grecaptcha && typeof grecaptcha.getResponse === 'function') {
+        const t = grecaptcha.getResponse();
+        if (t) {
+          console.log("🖐️ Manual solve detected!");
+          addToPool(t);
+          grecaptcha.reset();
         }
-      })
-    });
+      }
+    }, 1000);
 
-    const { taskId } = await createRes.json();
-
+    // Auto-solve loop: Keeps the pool filled to 5
     while (true) {
-      await sleep(1000);
+      if (getPool().length < 5) {
+        try {
+          console.log("🤖 CapSolver: Requesting new token...");
+          const createRes = await fetch(API.CAPTCHA_CREATE, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              clientKey: CLIENT_KEY,
+              task: { 
+                type: "ReCaptchaV2TaskProxyLess", 
+                websiteURL: "https://appointment.ivacbd.com", 
+                websiteKey: SITE_KEY 
+              }
+            })
+          });
+          
+          const createData = await createRes.json();
+          const taskId = createData.taskId;
 
-      const resultRes = await fetch(API.CAPTCHA_RESULT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          clientKey: CLIENT_KEY,
-          taskId
-        })
-      });
+          if (!taskId) throw new Error("No TaskID received");
 
-      const result = await resultRes.json();
-
-      if (result.status === "ready") {
-        localStorage.setItem('captchaToken', result.solution.gRecaptchaResponse)
-        return result.solution.gRecaptchaResponse;
+          let solved = false;
+          while (!solved) {
+            await sleep(3000); // Wait 3s between checks
+            const checkRes = await fetch(API.CAPTCHA_RESULT, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ clientKey: CLIENT_KEY, taskId })
+            });
+            
+            const result = await checkRes.json();
+            
+            if (result.status === "ready") {
+              console.log("🤖 CapSolver: Token ready!");
+              addToPool(result.solution.gRecaptchaResponse);
+              solved = true;
+            } else if (result.status === "failed") {
+              break; 
+            }
+          }
+        } catch (e) {
+          console.error("Collector Error:", e.message);
+          await sleep(5000);
+        }
       }
+      await sleep(2000);
     }
   }
 
-  async function getCaptchaToken() {
-  
-  let token = localStorage.getItem("captchaToken");
+  /*********************************
+   * 2. CONTINUOUS SENDER
+   *********************************/
+  async function startSender() {
+    console.log("🚀 Sender active. Running every 2 seconds.");
+    
+    while (true) {
+      const startTime = Date.now();
+      const token = popFromPool();
 
-  if (token) {
-    console.log("✅ Using existing captcha token from localStorage");
-    // Optionally remove it if you want one-time use
-    // localStorage.removeItem("captchaToken");
-    return token;
-  }
+      if (token) {
+        console.log(`📡 Sending Reserve Request (Pool: ${getPool().length})`);
+        try {
+          const res = await fetch(API.RESERVE_SLOT, {
+            method: "POST",
+            headers: {
+              "authorization": "Bearer " + AUTH_STORAGE.state.token,
+              "content-type": "application/json",
+            },
+            body: JSON.stringify({ captchaToken: token })
+          }).then(r => r.json());
 
-  console.log("⏳ No token found, solving captcha...");
-  token = await solveAction();
-
-  if (token) {
-    localStorage.setItem("captchaToken", token);
-    console.log("✅ New captcha token saved to localStorage");
-  }
-
-  return token;
-}
-  
-  /***********************
-   * STEP 2: RESERVE SLOT
-   ***********************/
-  async function reserveSlot(captchaToken) {
-    return fetch(API.RESERVE_SLOT, {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "accept": "application/json, text/plain, */*",
-        "accept-language": "en-US,en;q=0.9",
-        "authorization": "Bearer " + AUTH_STORAGE.state.token,
-        "cache-control": "no-cache, no-store, must-revalidate",
-        "content-type": "application/json",
-        "pragma": "no-cache",
-        "sec-fetch-dest": "empty",
-        "sec-fetch-mode": "cors",
-        "sec-fetch-site": "same-site"
-      },
-      referrer: "https://appointment.ivacbd.com/appointment/time-slot",
-      body: JSON.stringify({ captchaToken })
-    }).then(r => r.json());
-  }
-
-  /***********************
-   * STEP 3: INITIATE PAYMENT
-   ***********************/
-  async function initiatePayment() {
-    return fetch(API.INITIATE, {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "accept": "application/json, text/plain, */*",
-        "authorization": "Bearer " + AUTH_STORAGE.state.token,
-        "sec-fetch-dest": "empty",
-        "sec-fetch-mode": "cors",
-        "sec-fetch-site": "same-site"
-      },
-      referrer: "https://appointment.ivacbd.com/appointment/continue-payment",
-      body: null
-    }).then(r => r.json());
-  }
-
-  /***********************
-   * MAIN AUTOMATION LOOP
-   ***********************/
-  let attempt = 0;
-
-  while (true) {
-    attempt++;
-    console.log(`🔁 Attempt #${attempt}`);
-
-    // 1️⃣ CAPTCHA
-    const captchaToken = await getCaptchaToken();
-
-    // 2️⃣ RESERVE SLOT
-    const reserveRes = await reserveSlot(captchaToken);
-
-    if (
-      reserveRes?.message === "Slot reserved successfully" &&
-      reserveRes?.reservationId
-    ) {
-      console.log("🎉 Slot reserved");
-
-      // 3️⃣ INITIATE PAYMENT
-      const paymentRes = await initiatePayment();
-
-      // ✅ EXACT LOGIC YOU ASKED FOR
-      if (paymentRes?.data?.GatewayPageURL) {
-        window.open(paymentRes.data.GatewayPageURL, "_blank");
+          if (res?.message === "Slot reserved successfully") {
+            console.log("🎯 SUCCESS! Initiating payment...");
+            const pay = await fetch(API.INITIATE, {
+              method: "POST",
+              headers: { "authorization": "Bearer " + AUTH_STORAGE.state.token }
+            }).then(r => r.json());
+            
+            if (pay?.data?.GatewayPageURL) {
+              window.open(pay.data.GatewayPageURL, "_blank");
+              return; 
+            }
+          } else {
+            console.log("❌ Slot busy/Token rejected.");
+          }
+        } catch (e) {
+          console.error("Network error.");
+        }
       } else {
-        console.error("No Gateway Page URL received");
-        alert("Payment initiation failed. Please try again.");
+        console.warn("⚠️ Pool empty. Sender waiting...");
       }
 
-      break;
-    }
-
-    // Retry if slot not available
-    if (reserveRes?.reservationId === null) {
-      localStorage.removeItem('captchaToken');
-      console.log("❌ Slot unavailable, retrying...");
-      await sleep(5000);
+      // Exact 2-second heartbeat
+      const executionTime = Date.now() - startTime;
+      await sleep(Math.max(0, 2000 - executionTime));
     }
   }
+
+  // --- STARTUP ---
+  console.log("🛠️ Initializing pool and collector...");
+  startCollector();
+  
+  // Wait until we have exactly 5 tokens to start the 2s loop
+  const bufferCheck = setInterval(() => {
+    const count = getPool().length;
+    console.clear();
+    console.log(`📊 Status: Waiting for 5 tokens to start. Current: ${count}/5`);
+    
+    if (count >= 5) {
+      clearInterval(bufferCheck);
+      startSender();
+    }
+  }, 1000);
+
 })();
