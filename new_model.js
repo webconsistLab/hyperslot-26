@@ -24,29 +24,6 @@
   console.log("✅ Captcha solved! Token saved:", captchaToken);
 })();
 
-
-async function getCaptchaToken() {
-  
-  let token = localStorage.getItem("captchaToken");
-
-  if (token) {
-    console.log("✅ Using existing captcha token from localStorage");
-    // Optionally remove it if you want one-time use
-    // localStorage.removeItem("captchaToken");
-    return token;
-  }
-
-  console.log("⏳ No token found, solving captcha...");
-  token = await solveAction();
-
-  if (token) {
-    localStorage.setItem("captchaToken", token);
-    console.log("✅ New captcha token saved to localStorage");
-  }
-
-  return token;
-}
-
 (async () => {
   
   const AUTH_STORAGE = JSON.parse(localStorage.getItem('auth-storage'));
@@ -103,6 +80,28 @@ async function getCaptchaToken() {
     }
   }
 
+  async function getCaptchaToken() {
+  
+  let token = localStorage.getItem("captchaToken");
+
+  if (token) {
+    console.log("✅ Using existing captcha token from localStorage");
+    // Optionally remove it if you want one-time use
+    // localStorage.removeItem("captchaToken");
+    return token;
+  }
+
+  console.log("⏳ No token found, solving captcha...");
+  token = await solveAction();
+
+  if (token) {
+    localStorage.setItem("captchaToken", token);
+    console.log("✅ New captcha token saved to localStorage");
+  }
+
+  return token;
+}
+  
   /***********************
    * STEP 2: RESERVE SLOT
    ***********************/
@@ -182,8 +181,8 @@ async function getCaptchaToken() {
 
     // Retry if slot not available
     if (reserveRes?.reservationId === null) {
-      console.log("❌ Slot unavailable, retrying...");
       localStorage.removeItem('captchaToken');
+      console.log("❌ Slot unavailable, retrying...");
       await sleep(5000);
     }
   }
