@@ -1,6 +1,6 @@
 (async () => {
   /* --- CONFIGURATION --- */
-  const phone = "01764806080";
+  const phone = localStorage.phone;
   const password = "Msd@458@";
   const CLIENT_KEY = "CAP-9C3B0E752F38D866518010D71238E7E288763ED3579031F654D82FB608E7973D";
   const SITE_KEY = "6LdyiGMsAAAAAJefesdWMjxy8pu3A3DmbeJkkdUl";
